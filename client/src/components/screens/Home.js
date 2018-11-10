@@ -10,45 +10,19 @@ class Home extends React.Component{
     }
   }
   
-  generateSidebarContent() {
-    if (!this.state.isActive) {
-      return null;
-    }
-    return (
-      <div className='sidebar__content-container'>
-        <div className='sidebar__circle'>
-        </div>
-      </div>
-    )
-  }
-  
-  generateSidebar() {
-    const isActive = this.state.isActive ? 'active' : '';
-    return (
-      <div className={`sidebar ${isActive}`}>
-        {this.generateSidebarContent()}
-      </div>
-    )
-  }
-  
   render() {
-    const fontAwesomeClass = this.state.isActive ? 'chevron-left' : 'bars';
     return (
       <div className='phone'>
         <div className='phone__header'>
-          <span 
-            className={`fa fa-${fontAwesomeClass}`} 
-            onClick={() => this.setState({isActive: !this.state.isActive})}
-          />
+          <span class='fa fa-user-circle'/>
           <h3>LinkedUs</h3>
-          <span className='fa fa-search' />
+          <span class="fas fa-compass"/>
         </div>
         <div className='phone-content__wrapper'>
-          {this.generateSidebar()}
-          <PhoneContent color='blue'/>
-          <PhoneContent color='blue'  />
-          <PhoneContent color='blue' /> 
-          <PhoneContent color='blue' /> 
+          <CardContent color='blue'/>
+          <CardContent color='blue' />
+          <CardContent color='blue' /> 
+          <CardContent color='blue' /> 
         </div>
       </div>
     );
@@ -56,7 +30,7 @@ class Home extends React.Component{
 }
 
 
-class PhoneContent extends React.Component{
+class CardContent extends React.Component{
   
   constructor() {
     super();
