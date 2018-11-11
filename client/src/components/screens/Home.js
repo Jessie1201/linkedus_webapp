@@ -14,9 +14,9 @@ class Home extends React.Component{
     return (
       <div className='phone'>
         <div className='phone__header'>
-          <span class='fa fa-user-circle'/>
+          <span className='fa fa-user-circle'/>
           <h3>LinkedUs</h3>
-          <span class="fas fa-compass"/>
+          <span className="fas fa-compass"/>
         </div>
         <div className='phone-content__wrapper'>
           <CardContent color='blue'/>
