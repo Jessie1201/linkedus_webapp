@@ -20,6 +20,7 @@
 }
 
 .phone {
+  max-width: 36em;
   width: 100%;
   height: 100%;
   background: #efebde;
@@ -28,6 +29,7 @@
 }
 
 .phone__header {
+  max-width: 36em;
   width: 100%;
   height: 3em;
   background: #7bb2d6;
