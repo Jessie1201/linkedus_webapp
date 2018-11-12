@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import './Home.css';
 
-// for bottom navigation bar
+// for navigation
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -109,9 +109,9 @@ class BottomNav extends React.Component {
         onChange={this.handleChange}
         showLabels
       >
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Home" icon={<HomeRounded />} />
-        <BottomNavigationAction label="Messages" icon={<Messages />} />
+        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} component={Link} to={'/favorites'} />
+        <BottomNavigationAction label="Home" icon={<HomeRounded />} component={Link} to={'/'} />
+        <BottomNavigationAction label="Messages" icon={<Messages />} component={Link} to={'/messages'} />
       </BottomNavigation>
     );
   }

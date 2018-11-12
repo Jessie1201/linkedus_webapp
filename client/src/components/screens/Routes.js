@@ -5,6 +5,8 @@ import Route from 'react-router-dom/Route';
 import Home from "./Home.js";
 import Profile from "./Profile.js";
 import Login from "./Login.js";
+import Favorites from "./Favorites.js";
+import Messages from "./Messages.js";
 
 
 class Routes extends React.Component {
@@ -16,6 +18,18 @@ class Routes extends React.Component {
 	        <Route path='/' exact render={
 	          () => {
 	            return ( <Home /> )
+	          }
+	        } />
+
+	        <Route path='/favorites' exact render={
+	          () => {
+	            return ( <Favorites /> )
+	          }
+	        } />
+
+	        <Route path='/messages' exact render={
+	          () => {
+	            return ( <Messages /> )
 	          }
 	        } />
 
