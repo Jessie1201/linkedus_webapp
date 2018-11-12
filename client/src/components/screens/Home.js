@@ -1,20 +1,23 @@
 import React from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import './Home.css';
 
 class Home extends React.Component{
-  
+
   constructor() {
     super();
     this.state = {
       isActive: false    
     }
   }
-  
+
   render() {
     return (
       <div className='phone'>
         <div className='phone__header'>
-          <span className='fa fa-user-circle'/>
+          <Link to="/profile" style={{ color:'white' }}>
+            <span className='fa fa-user-circle'/>
+          </Link>
           <h3>LinkedUs</h3>
           <span className="fas fa-compass"/>
         </div>
@@ -28,6 +31,7 @@ class Home extends React.Component{
     );
   }
 }
+
 
 
 class CardContent extends React.Component{

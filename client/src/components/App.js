@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import Home from "./screens/Home.js";
+import Routes from "./screens/Routes.js";
 
 class App extends React.Component {
   render() {
     return (
-    	<Home />
+    	<Routes />
     );
   }
 }
