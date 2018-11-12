@@ -133,3 +133,10 @@
   animation: fadeInUp 0.75s;
 }
 
+.bottom_nav {
+  max-width: 36em;
+  width: 100%;
+  position:fixed;
+  bottom: 0;
+}
+

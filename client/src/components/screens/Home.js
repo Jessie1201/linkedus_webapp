@@ -2,6 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import './Home.css';
 
+// for bottom navigation bar
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import Messages from '@material-ui/icons/Message';
+import HomeRounded from '@material-ui/icons/HomeRounded';
+
+
 class Home extends React.Component{
 
   constructor() {
@@ -26,6 +34,9 @@ class Home extends React.Component{
           <CardContent color='blue' />
           <CardContent color='blue' /> 
           <CardContent color='blue' /> 
+        </div>
+        <div className='bottom_nav'>
+          <BottomNav />
         </div>
       </div>
     );
@@ -78,5 +89,32 @@ class CardContent extends React.Component{
   }
 }
 
+
+
+class BottomNav extends React.Component {
+  state = {
+    value: 0,
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  render() {
+    const { value } = this.state;
+
+    return (
+      <BottomNavigation
+        value={value}
+        onChange={this.handleChange}
+        showLabels
+      >
+        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Home" icon={<HomeRounded />} />
+        <BottomNavigationAction label="Messages" icon={<Messages />} />
+      </BottomNavigation>
+    );
+  }
+}
 
 export default Home;
