@@ -1,5 +1,5 @@
 # LinkedUs
-LinkedUs enables easier business networking by matching LinkedIn profile. It's a Mobile Dev course project at KHT.
+LinkedUs enables easier business networking by matching LinkedIn profile. It's a Mobile Dev course project at KTH.
 
 ## How to run
 ```shell
