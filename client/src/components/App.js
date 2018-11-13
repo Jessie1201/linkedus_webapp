@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Routes from "./screens/Routes.js";
+import Routes from "./Routes.js";
 
 class App extends React.Component {
   render() {
