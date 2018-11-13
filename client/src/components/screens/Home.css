@@ -41,15 +41,12 @@
   color: white;
   overflow-x: hidden;
 }
-.phone__header h3 {
-  font-size: 1em;
-  margin: 0;
-}
+
 .phone__header span {
   font-size: 1.3em;
   font-weight: lighter;
   cursor: pointer;
-  margin: 1em;
+  margin: 0.7em;
 }
 
 .phone-content__wrapper {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from 'material-ui-search-bar';
 
 import './Home.css';
 
@@ -20,7 +21,17 @@ class Home extends React.Component{
           <Link to="/profile" style={{ color:'white' }}>
             <span className='fa fa-user-circle'/>
           </Link>
-          <h3>LinkedUs</h3>
+          <SearchBar
+            onChange={() => console.log('onChange')}
+            onRequestSearch={() => console.log('onRequestSearch')}
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.3)',
+              width: '100%',
+              height: '60%',
+              boxShadow: 'none',
+              borderRadius: '30px',
+            }}
+          />
           <span className="fas fa-compass"/>
         </div>
         <div className='phone-content__wrapper'>
