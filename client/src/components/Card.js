@@ -15,6 +15,12 @@ class CardContent extends React.Component{
     if (!this.state.isActive) {
       return null;
     }
+
+    function sayhiClick(e) {
+      e.stopPropagation();
+    }
+
+
     return (
       <div>
         <div className='inner-content'>
@@ -32,6 +38,7 @@ class CardContent extends React.Component{
           </div>
         </div>
         <span className='fas fa-caret-up fa-lg arrow-up' />
+        <button className="sayhi_button" onClick={sayhiClick}>Say Hi!</button>
       </div>
     )
     
