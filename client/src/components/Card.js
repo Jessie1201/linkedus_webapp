@@ -16,9 +16,22 @@ class CardContent extends React.Component{
       return null;
     }
     return (
-      <div className='inner-content'>
-        <div className='inner-content__square'>
+      <div>
+        <div className='inner-content'>
+          <div className='inner-content-wrapper'>
+            <div className='card-content__line inner-content__title'>Areas of Interest</div>
+            <div className='card-content__line inner-content__details'>data visualization, 3D modeling, smart city, interaction design</div>
+          </div>
+          <div className='inner-content-wrapper'>
+            <div className='card-content__line inner-content__title'>Major Skills</div>
+            <div className='card-content__line inner-content__details'>Javascript, UX, WebGL</div>
+          </div>
+          <div className='inner-content-wrapper'>
+            <div className='card-content__line inner-content__title'>Previous Companies</div>
+            <div className='card-content__line inner-content__details'>Company A, Comany B</div>
+          </div>
         </div>
+        <span className='fas fa-caret-up fa-lg arrow-up' />
       </div>
     )
     
@@ -28,17 +41,17 @@ class CardContent extends React.Component{
     const className = this.state.isActive ? 'active' : '';
     return (
       <div 
-          className={`phone-content ${className}`}
+          className={`card-content ${className}`}
           onClick={() => this.setState({isActive: !this.state.isActive})}
         >
-        <div className={`phone-content__hero ${this.props.color}`}>
-        </div>
-        <div className='phone-content__footer'>
-          <div className='phone-content__circle'></div>
-          <div className='phone-content__line-wrapper'>
-            <div className='phone-content__line'></div>
-            <div className='phone-content__line phone-content__line--two'></div>
+        <div className='card-content__main'>
+          <div className='card-content__circle'></div>
+          <div className='card-content__line-wrapper'>
+            <div className='card-content__line card-content__line--name'>Jiaqi ZHENG</div>
+            <div className='card-content__line card-content__line--sub'>InfoVis Developer & Designer</div>
+            <div className='card-content__line card-content__line--sub'>KTH Royal Institute of Technoloty</div>
           </div>
+          <span className='fas fa-caret-down fa-lg arrow-down' />
         </div>
         {this.generateInnerContent()}
       </div>

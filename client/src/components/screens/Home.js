@@ -88,10 +88,10 @@ class Home extends React.Component{
         </Menu>
 
         <div className='phone-content__wrapper'>
-          <CardContent color='blue'/>
-          <CardContent color='blue' />
-          <CardContent color='blue' /> 
-          <CardContent color='blue' /> 
+          <CardContent />
+          <CardContent />
+          <CardContent /> 
+          <CardContent /> 
         </div>
 
       </div>
