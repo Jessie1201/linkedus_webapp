@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Route from 'react-router-dom/Route';
 
 import BottomNav from './Bottomnav.js';
-import './Bottomnav.css';
 
 import Home from "./screens/Home.js";
 import Profile from "./screens/Profile.js";
