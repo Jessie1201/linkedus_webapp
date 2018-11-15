@@ -1,4 +1,5 @@
 import React from 'react';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import './Card.css';
 
 
@@ -7,20 +8,19 @@ class CardContent extends React.Component{
   constructor() {
     super();
     this.state = {
-      isActive: false    
+      extendActive: false,
+      saveActive: false,
     }
   }
   
   generateInnerContent() {
-    if (!this.state.isActive) {
+    if (!this.state.extendActive) {
       return null;
     }
-
     function sayhiClick(e) {
       e.stopPropagation();
+      console.log("Hi Hi!");
     }
-
-
     return (
       <div>
         <div className='inner-content'>
@@ -41,17 +41,33 @@ class CardContent extends React.Component{
         <button className="sayhi_button" onClick={sayhiClick}>Say Hi!</button>
       </div>
     )
-    
+  }
+
+  saveClick(e) {
+    e.stopPropagation();
+    this.setState({saveActive: !this.state.saveActive});
   }
   
   render() {
-    const className = this.state.isActive ? 'active' : '';
+    const className = this.state.extendActive ? 'active' : '';
+
+    let saveClass = ["favorite_save"];
+
+    if(this.state.saveActive) {
+      saveClass.push('active');
+    }
+
     return (
       <div 
           className={`card-content ${className}`}
-          onClick={() => this.setState({isActive: !this.state.isActive})}
+          onClick={() => this.setState({extendActive: !this.state.extendActive})}
         >
         <div className='card-content__main'>
+          <FavoriteIcon
+            className={saveClass.join(' ')}
+            onClick={this.saveClick.bind(this)}
+            fontSize='small'
+          >{this.state.saveActive}</FavoriteIcon>
           <div className='card-content__circle'></div>
           <div className='card-content__line-wrapper'>
             <div className='card-content__line card-content__line--name'>Jiaqi ZHENG</div>

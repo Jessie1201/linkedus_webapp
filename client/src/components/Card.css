@@ -146,3 +146,14 @@
     transition: transform 0s;
 }
 
+.favorite_save {
+  position: absolute;
+  right: 1.7%;
+  top: 3%;
+  color: #D3D3D3;
+}
+
+.favorite_save.active {
+  color: #ed2379;
+}
+
