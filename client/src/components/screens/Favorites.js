@@ -40,8 +40,6 @@ class FavoritesScreen extends React.Component{
         <div className='phone-content__wrapper'>
           <CardContent />
           <CardContent />
-          <CardContent />
-          <CardContent />
         </div>
 
       </div>
