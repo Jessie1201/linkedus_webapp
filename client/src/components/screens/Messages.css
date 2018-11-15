@@ -1,0 +1,19 @@
+.chatlist {
+	top: 3.1em;
+}
+
+.chatlist .chatlist_item {
+	background-color: rgba(255,255,255,0.8);
+	margin: 0.3em 0.3em;
+	padding: 1em;
+}
+
+.chatlist .chatlist_item .avatar {
+	min-width: 40px;
+	width: 40px;
+	height: auto;
+}
+
+.message_content {
+	width: 100%;
+}
