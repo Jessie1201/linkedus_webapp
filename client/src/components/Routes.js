@@ -9,6 +9,7 @@ import Profile from "./screens/Profile.js";
 import Login from "./screens/Login.js";
 import Favorites from "./screens/Favorites.js";
 import Messages from "./screens/Messages.js";
+import ChatScreen from "./screens/Chat.js";
 
 
 class Routes extends React.Component {
@@ -33,6 +34,12 @@ class Routes extends React.Component {
 		        <Route path='/messages' exact render={
 		          () => {
 		            return ( <Messages /> )
+		          }
+		        } />
+
+		        <Route path='/chat' exact render={
+		          () => {
+		            return ( <ChatScreen /> )
 		          }
 		        } />
 

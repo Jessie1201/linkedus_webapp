@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import './Card.css';
 
@@ -38,7 +39,9 @@ class CardContent extends React.Component{
           </div>
         </div>
         <span className='fas fa-caret-up fa-lg arrow-up' />
-        <button className="sayhi_button" onClick={sayhiClick}>Say Hi!</button>
+        <Link to='/chat' className='sayhi_button_link'>
+          <button className="sayhi_button" onClick={sayhiClick}>Say Hi!</button>
+        </Link>
       </div>
     )
   }

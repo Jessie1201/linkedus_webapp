@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from 'material-ui-search-bar';
+import { Link } from 'react-router-dom';
 import { ThemeProvider, ChatList, ChatListItem, Avatar, Column, Row, Title, Subtitle } from '@livechat/ui-kit';
 
 import './Messages.css';
@@ -25,42 +26,48 @@ class MessagesScreen extends React.Component {
 	        </div>
 	    	<ThemeProvider>
 				<ChatList className='chatlist'>
-				  <ChatListItem className='chatlist_item'>
-				    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_11.jpg' />
-				    <Column className='message_content'>
-				      <Row justify>
-				        <Title ellipsis>{'Konrad'}</Title>
-				        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
-				      </Row>
-				      <Subtitle ellipsis>
-				        {'Hello, I also love DevOps, though not many friends of mine are doing the same.'}
-				      </Subtitle>
-				    </Column>
-				  </ChatListItem>
-				  <ChatListItem className='chatlist_item'>
-				    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_7.jpg' />
-				    <Column className='message_content'>
-				      <Row justify>
-				        <Title ellipsis>{'Andrew'}</Title>
-				        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
-				      </Row>
-				      <Subtitle ellipsis>
-				      	{'Which cafe would you prefer?'}
-				      </Subtitle>
-				    </Column>
-				  </ChatListItem>
-				  <ChatListItem className='chatlist_item'>
-				    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_8.jpg' />
-				    <Column className='message_content'>
-				      <Row justify>
-				        <Title ellipsis>{'Michael'}</Title>
-				        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
-				      </Row>
-				      <Subtitle ellipsis>
-				        {"It was so nice of you to share the knowledge, hope could see you next time!"}
-				      </Subtitle>
-				    </Column>
-				  </ChatListItem>
+				  <Link to='/chat' className='router_link'>
+				  	<ChatListItem className='chatlist_item'>
+					    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_11.jpg' />
+					    <Column className='message_content'>
+					      <Row justify>
+					        <Title ellipsis>{'Konrad'}</Title>
+					        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
+					      </Row>
+					      <Subtitle ellipsis>
+					        {'Hello, I also love DevOps, though not many friends of mine are doing the same.'}
+					      </Subtitle>
+					    </Column>
+				  	</ChatListItem>
+				  </Link>
+				  <Link to='/chat' className='router_link'>
+					  <ChatListItem className='chatlist_item'>
+					    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_7.jpg' />
+					    <Column className='message_content'>
+					      <Row justify>
+					        <Title ellipsis>{'Andrew'}</Title>
+					        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
+					      </Row>
+					      <Subtitle ellipsis>
+					      	{'Which cafe would you prefer?'}
+					      </Subtitle>
+					    </Column>
+					  </ChatListItem>
+				  </Link>
+				  <Link to='/chat' className='router_link'>
+					  <ChatListItem className='chatlist_item'>
+					    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_8.jpg' />
+					    <Column className='message_content'>
+					      <Row justify>
+					        <Title ellipsis>{'Michael'}</Title>
+					        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
+					      </Row>
+					      <Subtitle ellipsis>
+					        {"It was so nice of you to share the knowledge, hope could see you next time!"}
+					      </Subtitle>
+					    </Column>
+					  </ChatListItem>
+				  </Link>
 				</ChatList>
 			</ThemeProvider>
     	</div>
