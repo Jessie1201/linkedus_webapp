@@ -3,8 +3,8 @@
 # dependencies
 /client/.pnp
 /client/.pnp.js
-# /client/node_modules
-# /node_modules
+/client/node_modules
+/node_modules
 
 # testing
 /client/coverage
