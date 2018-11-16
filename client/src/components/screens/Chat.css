@@ -1,0 +1,24 @@
+.messenger {
+    width: 100%;
+    height: 90%;
+    top: 3em;
+}
+
+.bubble_left {
+	background: #efebde;
+	border-radius: 2em;
+}
+
+.bubble_right {
+    background-color: #91A8D3;
+    border-radius: 2em;
+}
+
+.textcomposer {
+    position: fixed;
+    bottom: 10%;
+    width: 85%;
+    margin-left: 1.5em;
+    /* margin-right: 2em; */
+    background-color: #91A8D3;
+}
