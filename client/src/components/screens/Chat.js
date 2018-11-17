@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeProvider, Message, MessageText, MessageList, MessageGroup,
   TextComposer, Row, TextInput, SendButton } from '@livechat/ui-kit';
-import HomeRounded from '@material-ui/icons/ArrowBackIos';
+import ArrowBack from '@material-ui/icons/ArrowBackIos';
 
 import './Chat.css';
 
@@ -12,7 +12,14 @@ class ChatScreen extends React.Component {
     return (
     	<div className='phone'>
         <div className='phone__header'>
-          <Link to='/messages' style={{ color:'white' }}><span><HomeRounded /></span></Link>
+          <Link to='/messages' style={{ color:'white' }}><span><ArrowBack /></span></Link>
+          {/* <span>Michale Smith</span> */}
+          <span>Michale Smith</span>
+          <a href="https://linkedin.com"
+            rel="noopener noreferrer"
+            target="_blank"
+            style={{ color:'white'}}
+            ><span className='fab fa-linkedin' /></a>
         </div>
 
         <ThemeProvider>
