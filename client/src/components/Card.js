@@ -20,7 +20,6 @@ class CardContent extends React.Component{
     }
     function sayhiClick(e) {
       e.stopPropagation();
-      console.log("Hi Hi!");
     }
     return (
       <div>
@@ -71,7 +70,8 @@ class CardContent extends React.Component{
             onClick={this.saveClick.bind(this)}
             fontSize='small'
           >{this.state.saveActive}</FavoriteIcon>
-          <div className='card-content__circle'></div>
+          <img className='card-content__circle'
+               src="https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg" />
           <div className='card-content__line-wrapper'>
             <div className='card-content__line card-content__line--name'>Jiaqi ZHENG</div>
             <div className='card-content__line card-content__line--sub'>InfoVis Developer & Designer</div>

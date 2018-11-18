@@ -37,6 +37,7 @@
   height: 6.5em;
   width: 6.5em;
   border-radius: 50%;
+  border: 0.1em solid #f3f6f7;
   background: #efebde;
 }
 
