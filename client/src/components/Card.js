@@ -71,7 +71,8 @@ class CardContent extends React.Component{
             fontSize='small'
           >{this.state.saveActive}</FavoriteIcon>
           <img className='card-content__circle'
-               src="https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg" />
+               src="https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg"
+               alt="profile" />
           <div className='card-content__line-wrapper'>
             <div className='card-content__line card-content__line--name'>Jiaqi ZHENG</div>
             <div className='card-content__line card-content__line--sub'>InfoVis Developer & Designer</div>
