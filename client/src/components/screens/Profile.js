@@ -10,7 +10,7 @@ import './Profile.css';
 class Profile extends React.Component {
   render() {
     return (
-      <div className='phone_profile'>
+      <div className='phone_brighter'>
         <div className='phone__header'>
           <Link to='/' style={{ color:'white' }}><span><ArrowBack /></span></Link>
           <span>User Name</span>
