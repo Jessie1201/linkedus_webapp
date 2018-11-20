@@ -29,9 +29,11 @@ class CardContent extends React.Component {
             <div>
                 <div className='inner-content'>
                     <div className='inner-content-wrapper'>
-                        <div className='card-content__line inner-content__title'>Areas of Interest</div>
-                        <div className='card-content__line inner-content__details'>data visualization, 3D modeling,
-                            smart city, interaction design
+                        <div className='card-content__line inner-content__title'>About me</div>
+                        <div className='card-content__line inner-content__details'>
+                            {
+                                this.props.summary
+                            }
                         </div>
                     </div>
                     <div className='inner-content-wrapper'>
@@ -40,7 +42,7 @@ class CardContent extends React.Component {
                     </div>
                     <div className='inner-content-wrapper'>
                         <div className='card-content__line inner-content__title'>Previous Companies</div>
-                        <div className='card-content__line inner-content__details'>Company A, Comany B</div>
+                        <div className='card-content__line inner-content__details'>Something</div>
                     </div>
                 </div>
                 <span className='fas fa-caret-up fa-lg arrow-up'/>
