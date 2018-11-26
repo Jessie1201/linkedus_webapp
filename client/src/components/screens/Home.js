@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swipeable from "react-swipy";
 import SearchBar from 'material-ui-search-bar';
 // for location filter
 import List from '@material-ui/core/List';
@@ -88,10 +89,18 @@ class Home extends React.Component{
         </Menu>
 
         <div className='phone-content__wrapper'>
-          <CardContent />
-          <CardContent />
-          <CardContent />
-          <CardContent />
+          <Swipeable onAfterSwipe={this.remove}>
+            <CardContent />
+          </Swipeable>
+          <Swipeable onAfterSwipe={this.remove}>
+            <CardContent />
+          </Swipeable>
+          <Swipeable onAfterSwipe={this.remove}>
+            <CardContent />
+          </Swipeable>
+          <Swipeable onAfterSwipe={this.remove}>
+            <CardContent />
+          </Swipeable>
         </div>
 
       </div>
