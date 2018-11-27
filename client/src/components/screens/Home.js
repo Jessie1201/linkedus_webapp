@@ -19,6 +19,7 @@ class Home extends React.Component{
   state = {
     anchorEl: null,
     selectedIndex: 0,
+    showCard: true,
   };
 
   handleClickListItem = event => {
@@ -33,9 +34,16 @@ class Home extends React.Component{
     this.setState({ anchorEl: null });
   };
 
+  // for swiping cards
+  removeCard = () => {
+    this.setState({ showCard: false });
+  };
+
 
   render() {
     const { anchorEl } = this.state;
+
+    var card = this.state.showCard ? <CardContent /> : '';
 
     return (
       <div className='phone'>
@@ -89,16 +97,13 @@ class Home extends React.Component{
         </Menu>
 
         <div className='phone-content__wrapper'>
-          <Swipeable onAfterSwipe={this.remove}>
+          <Swipeable onAfterSwipe={this.removeCard}>
+            {card}
+          </Swipeable>
+          <Swipeable>
             <CardContent />
           </Swipeable>
-          <Swipeable onAfterSwipe={this.remove}>
-            <CardContent />
-          </Swipeable>
-          <Swipeable onAfterSwipe={this.remove}>
-            <CardContent />
-          </Swipeable>
-          <Swipeable onAfterSwipe={this.remove}>
+          <Swipeable>
             <CardContent />
           </Swipeable>
         </div>
