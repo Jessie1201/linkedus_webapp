@@ -25,6 +25,14 @@
   opacity: 0;
 }
 
+.extendinfo {
+  display: none;
+}
+
+.card-content.active .extendinfo {
+  display: block;
+}
+
 .card-content__main{
   display: flex;
   justify-content: flex-start;
