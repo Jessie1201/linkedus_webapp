@@ -33,16 +33,8 @@ class Home extends React.Component{
     this.setState({ anchorEl: null });
   };
 
-  // for swiping cards
-  // removeCard = () => {
-  //   this.setState({ showCard: false });
-  // };
-
-
   render() {
     const { anchorEl } = this.state;
-
-    // var card = this.state.showCard ? <CardContent /> : '';
 
     return (
       <div className='phone'>
@@ -96,15 +88,6 @@ class Home extends React.Component{
         </Menu>
 
         <div className='phone-content__wrapper'>
-          {/* <Swipeable onAfterSwipe={this.removeCard}>
-            {card}
-          </Swipeable>
-          <Swipeable>
-            <CardContent />
-          </Swipeable>
-          <Swipeable>
-            <CardContent />
-          </Swipeable> */}
           <CardContent />
         </div>
 

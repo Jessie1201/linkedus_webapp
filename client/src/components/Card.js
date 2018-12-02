@@ -18,6 +18,7 @@ class CardContent extends React.Component{
       interest: 'IoT, Embedded System, Electronics',
       extendActive: false,
       saveActive: false,
+      remove: false,
     }, {
       name: 'Jiaqi ZHENG',
       photo: 'https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg',
@@ -28,6 +29,7 @@ class CardContent extends React.Component{
       interest: 'User Interface, Graphics Programming, Shader Programming',
       extendActive: false,
       saveActive: false,
+      remove: false,
     }, {
       name: 'Marco Castaldi',
       photo: 'https://livechat.s3.amazonaws.com/default/avatars/male_20.jpg',
@@ -38,6 +40,7 @@ class CardContent extends React.Component{
       interest: 'Mobile, Java, Native Technology',
       extendActive: false,
       saveActive: false,
+      remove: false,
     }]
   }
 
@@ -57,9 +60,16 @@ class CardContent extends React.Component{
     this.setState({ posts });
   }
 
+  removeCard = (i) => {
+    const { posts } = this.state;
+    posts[i].remove = true;
+    this.setState({ posts });
+  };
+
   render() {
     const cards = this.state.posts.map((item, i) => (
-      <Swipeable key={i}>
+      <div key={i} className={`card_wrap ${this.state.posts[i].remove ? 'active' : ''}`}>
+      <Swipeable onAfterSwipe={() => this.removeCard(i)}>
         <div
           id={i} onClick={this.cardClick}
           className={`card-content ${this.state.posts[i].extendActive ? 'active' : ''}`}
@@ -104,6 +114,7 @@ class CardContent extends React.Component{
           </div>
         </div>
       </Swipeable>
+      </div>
     ));
 
     return (
