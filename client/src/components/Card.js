@@ -44,19 +44,17 @@ class CardContent extends React.Component{
     }]
   }
 
-  saveClick = (e) => {
+  saveClick = (e, i) => {
     // prevent card extending triggered
     e.stopPropagation();
     const { posts } = this.state;
-    const { id } = e.currentTarget;
-    posts[id].saveActive = !this.state.posts[id].saveActive;
+    posts[i].saveActive = !this.state.posts[i].saveActive;
     this.setState({ posts });
   }
 
-  cardClick = (e) => {
+  cardClick = (i) => {
     const { posts } = this.state;
-    const { id } = e.currentTarget;
-    posts[id].extendActive = !this.state.posts[id].extendActive;
+    posts[i].extendActive = !this.state.posts[i].extendActive;
     this.setState({ posts });
   }
 
@@ -71,12 +69,12 @@ class CardContent extends React.Component{
       <div key={i} className={`card_wrap ${this.state.posts[i].remove ? 'active' : ''}`}>
       <Swipeable onAfterSwipe={() => this.removeCard(i)}>
         <div
-          id={i} onClick={this.cardClick}
+          id={i} onClick={() => this.cardClick(i)}
           className={`card-content ${this.state.posts[i].extendActive ? 'active' : ''}`}
           >
           <div className='card-content__main'>
             <FavoriteIcon
-              id={i} onClick={this.saveClick}
+              id={i} onClick={() => this.saveClick(i)}
               className={`favorite_save ${this.state.posts[i].saveActive ? 'active' : ''}`}
               fontSize='small'
             >{this.state.saveActive}</FavoriteIcon>
