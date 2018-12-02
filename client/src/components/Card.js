@@ -4,74 +4,68 @@ import Swipeable from "react-swipy";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import './Card.css';
 
-// this currently manual written data, should finally be extracted from linkedin
-const data = [
-  {
-    id: 1,
-    name: 'Wong Da Jin',
-    photo: 'https://livechat.s3.amazonaws.com/default/avatars/male_22.jpg',
-    title: 'Electronics Engineer',
-    location: 'Singapore',
-    summary: 'I am an Embedded Systems Master student with solid technical expertise and problem-solving skills. I am actively looking for job opportunities in Embedded systems development.',
-    skills: 'CPU computing, Arduino, C++',
-    interest: 'IoT, Embedded System, Electronics'
-  },
-  {
-    id: 2,
-    name: 'Jiaqi ZHENG',
-    photo: 'https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg',
-    title: 'Graphics Developer & Designer',
-    location: 'Stockholm, Sweden',
-    summary: 'Pursuing the M.Sc. in HCI right now, I am passionate about aesthetics/graphics programming. With some experience in interaction design and web development, I will be working on the thesis of WebGL visualization, as a step towards my career goal of Data Artist & Graphics Programmer.',
-    skills: 'HCI, JS, WebGL',
-    interest: 'User Interface, Graphics Programming, Shader Programming'
-  },
-  {
-    id: 3,
-    name: 'Marco Castaldi',
-    photo: 'https://livechat.s3.amazonaws.com/default/avatars/male_20.jpg',
-    title: 'Android Developer',
-    location: 'San Francisco, US',
-    summary: 'Fresh MSc graduate at Aalto University (Finland). Currently working as a Full-Stack Engineer at Ellipsis Health.',
-    skills: 'Android Studio, native react, java',
-    interest: 'Mobile, Java, Native Technology'
-  }
-];
-
 
 class CardContent extends React.Component{
-  
-  constructor() {
-    super();
-    this.state = {
+  // this currently manual written data, should finally be extracted from linkedin
+  state = {
+    posts: [{
+      name: 'Wong Da Jin',
+      photo: 'https://livechat.s3.amazonaws.com/default/avatars/male_22.jpg',
+      title: 'Electronics Engineer',
+      location: 'Singapore',
+      summary: 'I am an Embedded Systems Master student with solid technical expertise and problem-solving skills. I am actively looking for job opportunities in Embedded systems development.',
+      skills: 'CPU computing, Arduino, C++',
+      interest: 'IoT, Embedded System, Electronics',
       extendActive: false,
       saveActive: false,
-    }
+    }, {
+      name: 'Jiaqi ZHENG',
+      photo: 'https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg',
+      title: 'Graphics Developer & Designer',
+      location: 'Stockholm, Sweden',
+      summary: 'Pursuing the M.Sc. in HCI right now, I am passionate about aesthetics/graphics programming. With some experience in interaction design and web development, I will be working on the thesis of WebGL visualization, as a step towards my career goal of Data Artist & Graphics Programmer.',
+      skills: 'HCI, JS, WebGL',
+      interest: 'User Interface, Graphics Programming, Shader Programming',
+      extendActive: false,
+      saveActive: false,
+    }, {
+      name: 'Marco Castaldi',
+      photo: 'https://livechat.s3.amazonaws.com/default/avatars/male_20.jpg',
+      title: 'Android Developer',
+      location: 'San Francisco, US',
+      summary: 'Fresh MSc graduate at Aalto University (Finland). Currently working as a Full-Stack Engineer at Ellipsis Health.',
+      skills: 'Android Studio, native react, java',
+      interest: 'Mobile, Java, Native Technology',
+      extendActive: false,
+      saveActive: false,
+    }]
   }
 
   saveClick(e) {
     e.stopPropagation();
     this.setState({saveActive: !this.state.saveActive});
   }
-  
+
+  cardClick = (e) => {
+    const { posts } = this.state;
+    const { id } = e.currentTarget;
+    posts[id].extendActive = !this.state.posts[id].extendActive;
+    this.setState({ posts });
+  }
+
   render() {
-    const className = this.state.extendActive ? 'active' : '';
+    // let extendClass = this.state.extendActive ? 'active' : '';
+    let saveClass = this.state.saveActive ? 'active' : '';
 
-    let saveClass = ["favorite_save"];
-
-    if(this.state.saveActive) {
-      saveClass.push('active');
-    }
-
-    const cards = data.map(item => (
-      <Swipeable key={item.id}>
-        <div 
-            className={`card-content ${className}`}
-            onClick={() => this.setState({extendActive: !this.state.extendActive})}
+    const cards = this.state.posts.map((item, i) => (
+      <Swipeable key={i}>
+        <div
+          id={i} onClick={this.cardClick.bind(this)}
+          className={`card-content ${this.state.posts[i].extendActive ? 'active' : ''}`}
           >
           <div className='card-content__main'>
             <FavoriteIcon
-              className={saveClass.join(' ')}
+              className={`favorite_save ${saveClass}`}
               onClick={this.saveClick.bind(this)}
               fontSize='small'
             >{this.state.saveActive}</FavoriteIcon>

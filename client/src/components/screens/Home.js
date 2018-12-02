@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Swipeable from "react-swipy";
 import SearchBar from 'material-ui-search-bar';
 // for location filter
 import List from '@material-ui/core/List';
@@ -35,15 +34,15 @@ class Home extends React.Component{
   };
 
   // for swiping cards
-  removeCard = () => {
-    this.setState({ showCard: false });
-  };
+  // removeCard = () => {
+  //   this.setState({ showCard: false });
+  // };
 
 
   render() {
     const { anchorEl } = this.state;
 
-    var card = this.state.showCard ? <CardContent /> : '';
+    // var card = this.state.showCard ? <CardContent /> : '';
 
     return (
       <div className='phone'>
@@ -97,7 +96,7 @@ class Home extends React.Component{
         </Menu>
 
         <div className='phone-content__wrapper'>
-          <Swipeable onAfterSwipe={this.removeCard}>
+          {/* <Swipeable onAfterSwipe={this.removeCard}>
             {card}
           </Swipeable>
           <Swipeable>
@@ -105,7 +104,8 @@ class Home extends React.Component{
           </Swipeable>
           <Swipeable>
             <CardContent />
-          </Swipeable>
+          </Swipeable> */}
+          <CardContent />
         </div>
 
       </div>
