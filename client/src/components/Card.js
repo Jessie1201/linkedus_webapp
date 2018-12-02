@@ -41,9 +41,13 @@ class CardContent extends React.Component{
     }]
   }
 
-  saveClick(e) {
+  saveClick = (e) => {
+    // prevent card extending triggered
     e.stopPropagation();
-    this.setState({saveActive: !this.state.saveActive});
+    const { posts } = this.state;
+    const { id } = e.currentTarget;
+    posts[id].saveActive = !this.state.posts[id].saveActive;
+    this.setState({ posts });
   }
 
   cardClick = (e) => {
@@ -54,19 +58,16 @@ class CardContent extends React.Component{
   }
 
   render() {
-    // let extendClass = this.state.extendActive ? 'active' : '';
-    let saveClass = this.state.saveActive ? 'active' : '';
-
     const cards = this.state.posts.map((item, i) => (
       <Swipeable key={i}>
         <div
-          id={i} onClick={this.cardClick.bind(this)}
+          id={i} onClick={this.cardClick}
           className={`card-content ${this.state.posts[i].extendActive ? 'active' : ''}`}
           >
           <div className='card-content__main'>
             <FavoriteIcon
-              className={`favorite_save ${saveClass}`}
-              onClick={this.saveClick.bind(this)}
+              id={i} onClick={this.saveClick}
+              className={`favorite_save ${this.state.posts[i].saveActive ? 'active' : ''}`}
               fontSize='small'
             >{this.state.saveActive}</FavoriteIcon>
             <img className='card-content__circle'
@@ -101,7 +102,6 @@ class CardContent extends React.Component{
               <button className="sayhi_button">Say Hi!</button>
             </Link>
           </div>
-
         </div>
       </Swipeable>
     ));
