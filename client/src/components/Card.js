@@ -69,12 +69,12 @@ class CardContent extends React.Component{
       <div key={i} className={`card_wrap ${this.state.posts[i].remove ? 'active' : ''}`}>
       <Swipeable onAfterSwipe={() => this.removeCard(i)}>
         <div
-          id={i} onClick={() => this.cardClick(i)}
+          onClick={() => this.cardClick(i)}
           className={`card-content ${this.state.posts[i].extendActive ? 'active' : ''}`}
           >
           <div className='card-content__main'>
             <FavoriteIcon
-              id={i} onClick={() => this.saveClick(i)}
+              onClick={(e) => this.saveClick(e, i)}
               className={`favorite_save ${this.state.posts[i].saveActive ? 'active' : ''}`}
               fontSize='small'
             >{this.state.saveActive}</FavoriteIcon>
