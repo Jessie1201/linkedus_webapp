@@ -19,6 +19,7 @@ class CardContent extends React.Component{
       extendActive: false,
       saveActive: false,
       remove: false,
+      snackbar: false,
     }, {
       name: 'Jiaqi ZHENG',
       photo: 'https://livechat.s3.amazonaws.com/default/avatars/female_22.jpg',
@@ -30,6 +31,7 @@ class CardContent extends React.Component{
       extendActive: false,
       saveActive: false,
       remove: false,
+      snackbar: false,
     }, {
       name: 'Marco Castaldi',
       photo: 'https://livechat.s3.amazonaws.com/default/avatars/male_20.jpg',
@@ -41,6 +43,7 @@ class CardContent extends React.Component{
       extendActive: false,
       saveActive: false,
       remove: false,
+      snackbar: false,
     }]
   }
 
@@ -64,6 +67,15 @@ class CardContent extends React.Component{
     this.setState({ posts });
   };
 
+  showSnackbar = (i) => {
+    const { posts } = this.state;
+    posts[i].snackbar = true;
+    setTimeout(() => {
+      posts[i].snackbar = false;
+      this.setState({ posts });
+    }, 1500);
+  };
+
   render() {
     const cards = this.state.posts.map((item, i) => (
       <div key={i} className={`card_wrap ${this.state.posts[i].remove ? 'active' : ''}`}>
@@ -83,7 +95,9 @@ class CardContent extends React.Component{
                 alt="profile" />
             <div className='card-content__line-wrapper'>
               <div className='card-content__line--name'
-                style={{fontSize: item.name.length * -0.13 + 3.36 + "em"}}>{item.name}</div>
+                style={{fontSize: item.name.length * -0.13 + 3.36 + "em"}}
+                onClick={() => this.showSnackbar(i)}
+                >{item.name}</div>
               <div className='card-content__line--sub'>{item.title}</div>
               <div className='card-content__line--sub'>{item.location}</div>
             </div>
@@ -112,6 +126,7 @@ class CardContent extends React.Component{
           </div>
         </div>
       </Swipeable>
+      <div className={`snackbar ${this.state.posts[i].snackbar ? 'active' : ''}`}>Deleted</div>
       </div>
     ));
 
