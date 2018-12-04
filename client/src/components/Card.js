@@ -122,7 +122,7 @@ class CardContent extends React.Component{
     setTimeout(() => {
       posts[i].snackbar = false;
       this.setState({ posts });
-    }, 3000);
+    }, 3500);
     this.setState({ posts });
   };
 
