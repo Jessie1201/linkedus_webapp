@@ -166,11 +166,10 @@
 
 .snackbar {
   visibility: hidden;
-  min-width: 200px;
-  margin-left: -100px;
+  min-width: 180px;
+  margin-left: -90px;
   background-color: #333;
   color: #fff;
-  text-align: center;
   border-radius: 2px;
   padding: 0.7em;
   position: fixed;
@@ -178,6 +177,8 @@
   left: 50%;
   top: 4em;
   font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
 }
 
 .snackbar.active {
@@ -206,7 +207,11 @@
   to {top: 0; opacity: 0;}
 }
 
-.undoremove {
+.snackbar_text {
   margin-left: 0.8em;
+}
+
+.undoremove {
+  margin-right: 0.8em;
   color: #f8476d;
 }

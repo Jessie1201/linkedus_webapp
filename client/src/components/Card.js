@@ -183,7 +183,7 @@ class CardContent extends React.Component{
           </Swipeable>
         </div>
         <div className={`snackbar ${this.state.posts[i].snackbar ? 'active' : ''}`}>
-          Not Interested
+          <span className='snackbar_text'>Not Interested</span>
           <span className='undoremove' onClick={() => this.undoRemove(i)}>UNDO</span>
         </div>
       </div>
