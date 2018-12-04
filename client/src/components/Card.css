@@ -64,6 +64,7 @@
 }
 
 .card-content__line--sub {
+  max-width: 190px;
   font-size: 0.8em;
   line-height: 1.5;
 }
@@ -169,8 +170,8 @@
 
 .snackbar.active {
   visibility: visible;
-  -webkit-animation: fadein 0.5s;
-  animation: fadein 0.5s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 @-webkit-keyframes fadein {
@@ -181,4 +182,19 @@
 @keyframes fadein {
   from {top: 0; opacity: 0;}
   to {top: 4em; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 4em; opacity: 1;} 
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 4em; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+.undoremove {
+  margin-left: 0.8em;
+  color: #f8476d;
 }
