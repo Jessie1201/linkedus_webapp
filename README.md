@@ -1,6 +1,6 @@
 # LinkedUs
-http://18.188.104.144:3000/
-(open with the phone)
+http://18.188.104.144:3000/  
+(open the url with the phone)  
 LinkedUs enables easier business networking by matching LinkedIn profile. It's a Mobile Dev course project at KTH.
 
 ## How to run
