@@ -22,15 +22,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // API calls
-app.get('/api/hello', (req, res) => {
+app.get('/api/userinfo', (req, res) => {
   connection.query(SELECT_ALL_USERINFO_QUERY, (err, results) => {
-    if(err) {
-      return res.send(err)
-    } else {
-      return res.json({
+    if(err) return res.send(err);
+    return res.json({
         data: results
-      })
-    }
+    })
   })
 });
 
