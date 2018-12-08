@@ -1,14 +1,39 @@
 const express = require('express');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
+
+const SELECT_ALL_USERINFO_QUERY = 'SELECT * FROM user_info';
+
+const connection = mysql.createConnection({
+  host: '18.188.104.144',
+  user: 'linkedus',
+  password: '12345678',
+  database: 'linkedus'
+});
+
+connection.connect(err => {
+  if (err) throw err;
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 // API calls
 app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Express' });
+  connection.query(SELECT_ALL_USERINFO_QUERY, (err, results) => {
+    if(err) {
+      return res.send(err)
+    } else {
+      return res.json({
+        data: results
+      })
+    }
+  })
 });
+
 app.post('/api/world', (req, res) => {
   console.log(req.body);
   res.send(

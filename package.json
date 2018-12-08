@@ -9,6 +9,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "node-mysql": "^0.4.2",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
     "react-linkedin-login-oauth2": "^1.0.5",
