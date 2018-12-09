@@ -13,11 +13,11 @@ class Profile extends React.Component {
       <div className='phone_brighter'>
         <div className='phone__header'>
           <Link to='/' style={{ color:'white' }}><span><ArrowBack /></span></Link>
-          <span>User Name</span>
+          <span>Jiaqi Zheng</span>
           <Link to='/settings' style={{ color:'white' }}><span><SettingIcon /></span></Link>
         </div>
         <img className='profile_avatar'
-            src="https://livechat.s3.amazonaws.com/default/avatars/female_15.jpg"
+            src="https://media.licdn.com/dms/image/C4D03AQFEx0TW8NhsCw/profile-displayphoto-shrink_200_200/0?e=1550102400&v=beta&t=Ql_WOwO8V8ip6S1r0cs6yhHGDRNh9totiWbhygVXbBU"
             alt="profile" />
         <div className='profile_details'>
           <span className='details_title'>Area of Interest</span>
