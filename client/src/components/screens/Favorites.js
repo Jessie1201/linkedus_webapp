@@ -83,7 +83,7 @@ class CardContent extends React.Component{
                     alt="profile" />
                 <div className='card-content__line-wrapper'>
                   <div className='card-content__line--name'
-                    style={{fontSize: item.name.length * -0.13 + 3.36 + "em"}}>{item.name}</div>
+                    style={{fontSize: item.name.length * -0.13 + 3.32 + "em"}}>{item.name}</div>
                   <div className='card-content__line--sub'>{item.title}</div>
                   <div className='card-content__line--sub'>{item.location}</div>
                 </div>
