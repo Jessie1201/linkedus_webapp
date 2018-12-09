@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import Swipeable from "react-swipy";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchBar from 'material-ui-search-bar';
-// import CardContent from '../Card.js';
 
-
+// below yet to be optimized by React Composition, aka. reuse Card.js
 class CardContent extends React.Component{
   state = {
     posts: []
@@ -126,7 +125,6 @@ class CardContent extends React.Component{
     );
   }
 }
-
 
 
 class FavoritesScreen extends React.Component{
