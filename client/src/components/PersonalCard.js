@@ -9,7 +9,7 @@ class CardContent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            extendActive: false,
+            extendActive: true,
             saveActive: false,
 
         }
@@ -22,27 +22,26 @@ class CardContent extends React.Component {
 
         function sayhiClick(e) {
             e.stopPropagation();
-            console.log("Hi Hi!");
         }
 
         return (
             <div>
                 <div className='inner-content'>
                     <div className='inner-content-wrapper'>
-                        <div className='card-content__line inner-content__title'>About me</div>
-                        <div className='card-content__line inner-content__details'>
+                        <div className='inner-content__title'>About me</div>
+                        <div className='inner-content__details'>
                             {
                                 this.props.summary
                             }
                         </div>
                     </div>
                     <div className='inner-content-wrapper'>
-                        <div className='card-content__line inner-content__title'>Major Skills</div>
-                        <div className='card-content__line inner-content__details'>Javascript, UX, WebGL</div>
+                        <div className='inner-content__title'>Skills</div>
+                        <div className='inner-content__details'>Javascript, UX, WebGL</div>
                     </div>
                     <div className='inner-content-wrapper'>
-                        <div className='card-content__line inner-content__title'>Previous Companies</div>
-                        <div className='card-content__line inner-content__details'>Something</div>
+                        <div className='inner-content__title'>Area of Interest</div>
+                        <div className='inner-content__details'>Something</div>
                     </div>
                 </div>
                 <span className='fas fa-caret-up fa-lg arrow-up'/>
@@ -84,9 +83,9 @@ class CardContent extends React.Component {
                         }
                     </div>
                     <div className='card-content__line-wrapper'>
-                        <div className='card-content__line card-content__line--name'>{this.props.firstName + " " + this.props.lastName}</div>
-                        <div className='card-content__line card-content__line--sub'>{this.props.headline}</div>
-                        <div className='card-content__line card-content__line--sub'>{this.props.location}</div>
+                        <div className='card-content__line--name'>{this.props.firstName + " " + this.props.lastName}</div>
+                        <div className='card-content__line--sub'>{this.props.headline}</div>
+                        <div className='card-content__line--sub'>{this.props.location}</div>
                     </div>
                     <span className='fas fa-caret-down fa-lg arrow-down'/>
                 </div>

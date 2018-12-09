@@ -29,6 +29,9 @@ class Profile extends React.Component {
           <div className='skill_add'>+</div>
           <SkillsArray />
         </div>
+        <Link to='/login' className='view_my_card'>
+          <button className="view_my_card_button">View My Card</button>
+        </Link>
       </div>
     );
   }

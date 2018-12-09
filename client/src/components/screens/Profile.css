@@ -19,7 +19,7 @@
 }
 
 .profile_details {
-    top: 5.5em;
+    top: 5em;
     padding: 1.5em 2.5em;
 }
 
@@ -56,4 +56,27 @@
     color: white;
     background-color: #8A94AF;
     text-align: center;
+}
+
+.view_my_card {
+    position: absolute;
+    right: 30%;
+    bottom: 11%;
+    box-sizing: border-box;
+    width: 100px;
+}
+
+.view_my_card_button {
+    right: 28%;
+    border: none;
+    border-radius: 4px;
+    width: 115px;
+    height: 48px;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    background-image: url('../img/card_pattern.jpg');
+    background-size: 140px 290px;
 }
