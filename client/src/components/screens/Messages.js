@@ -28,10 +28,10 @@ class MessagesScreen extends React.Component {
 				<ChatList className='chatlist'>
 				  <Link to='/chat' className='router_link'>
 				  	<ChatListItem className='chatlist_item'>
-					    <Avatar className='avatar' imgUrl='https://livechat.s3.amazonaws.com/default/avatars/male_11.jpg' />
+					    <Avatar className='avatar' imgUrl='https://media.licdn.com/dms/image/C4E03AQFdhqSSucWLTg/profile-displayphoto-shrink_800_800/0?e=1550102400&v=beta&t=dsJgTRO-OBZ1GzdaZH7cv9XKqsczC0UJV5KK_PhXtFI' />
 					    <Column className='message_content'>
 					      <Row justify>
-					        <Title ellipsis>{'Konrad'}</Title>
+					        <Title ellipsis>{'Weiqing'}</Title>
 					        <Subtitle nowrap>{'14:31 PM'}</Subtitle>
 					      </Row>
 					      <Subtitle ellipsis>

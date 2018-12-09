@@ -14,10 +14,9 @@ class ChatScreen extends React.Component {
         <div className='phone__header'>
           <Link to='/messages' style={{ color:'white' }}><span><ArrowBack /></span></Link>
           {/* <span>Michale Smith</span> */}
-          <span>Michale Smith</span>
-          <a href="https://linkedin.com"
+          <span>Weiqing Huang</span>
+          <a href="https://www.linkedin.com/in/wqhuang-ustc/"
             rel="noopener noreferrer"
-            target="_blank"
             style={{ color:'white'}}
             ><span className='fab fa-linkedin' /></a>
         </div>
@@ -26,20 +25,20 @@ class ChatScreen extends React.Component {
           <div className='messenger'>
             <MessageList active>
               <MessageGroup
-                avatar="https://livechat.s3.amazonaws.com/default/avatars/male_8.jpg"
+                avatar="https://media.licdn.com/dms/image/C4E03AQFdhqSSucWLTg/profile-displayphoto-shrink_800_800/0?e=1550102400&v=beta&t=dsJgTRO-OBZ1GzdaZH7cv9XKqsczC0UJV5KK_PhXtFI"
                 onlyFirstWithMeta
               >
-                <Message authorName="Michale Smith" date="21:37">
+                <Message authorName="Weiqing Huang" date="21:37">
                   <MessageText className='bubble_left'>
                     Hello, how are you? I'm Jon, nice to meet you!
                   </MessageText>
                 </Message>
-                <Message authorName="Michale Smith" date="21:37">
+                <Message authorName="Weiqing Huang" date="21:37">
                   <MessageText className='bubble_left'>
                     I also love DevOps, though not many friends of mine are doing the same.
                   </MessageText>
                 </Message>
-                <Message authorName="Michale Smith" date="21:37">
+                <Message authorName="Weiqing Huang" date="21:37">
                   <MessageText className='bubble_left'>
                     Some techniques like Kubernetes are super useful.
                   </MessageText>
