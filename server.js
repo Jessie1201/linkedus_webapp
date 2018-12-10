@@ -38,21 +38,6 @@ app.get('/api/usersaved', (req, res) => {
   })
 });
 
-app.post('/api/save', (req, res) => {
-  // connection.query(
-  //   'UPDATE linkedus.user_info SET saveActive = NOT saveActive WHERE user_id = ?;',
-  //   (err, results) => {
-  //     if(err) return res.send(err);
-  //     return res.json({
-  //       data: results
-  //   })}
-  // )
-  console.log(req.body);
-  res.send(
-    `I received your POST request. This is what you sent me: ${req.body.post}`,
-  );
-});
-
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'client/build')));
