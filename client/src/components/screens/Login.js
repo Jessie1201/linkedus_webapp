@@ -2,8 +2,7 @@ import React from 'react';
 import './Login.css';
 
 import PersonalCard from "../PersonalCard";
-
-
+//import axios from 'axios';
 var IN = null;
 
 class Login extends React.Component {
@@ -122,8 +121,10 @@ class Login extends React.Component {
             .body()
             .result(this.updateLinkedinProfile);
     };
+
     updateLinkedinProfile = profile => {
-        console.log(profile);
+        //console.log(profile);
+
         this.setState({
             firstName: profile.firstName,
             headline: profile.headline,
@@ -135,7 +136,53 @@ class Login extends React.Component {
             summary: profile.summary,
             connectionsCount: profile.numConnections,
         });
-    };
+        // axios.post('/home',{
+        //     Name: profile.firstName+' '+profile.lastName,
+        //     pictureURL: profile.pictureURL,
+        //     headline: profile.headline,
+        //     location: profile.location,
+        //     summary: profile.summary
+        //   })
+        //   .then(function (response) {
+        //     console.log(response);
+        //   })
+        //   .catch(function (error) {
+        //     console.log(error);
+        //   });
+        let data = {
+          Name: profile.firstName+' '+profile.lastName,
+          pictureURL: profile.pictureUrl,
+          headline: profile.headline,
+          location: profile.location.name,
+          summary: profile.summary
+        };
+        console.log(data);
+        fetch('/profile', {
+          method:'POST',
+          body: JSON.stringify(data),
+          headers: {
+                "Content-Type": "application/json"
+            }
+
+        }).then((res)=>{
+          if(res.ok){
+            return res.json();
+          }
+          else{
+            throw new Error ('Wrong');
+          }
+        })
+        .then((json)=>{
+          console.log(json);
+        })
+        // .then(function(response) {
+        //   return response.json()
+        // })
+        // .then(function(body) {
+        //   console.log(body);
+        // });
+      }
+
 
     render() {
 

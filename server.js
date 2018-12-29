@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
-
 const connection = mysql.createConnection({
   host: '18.188.104.144',
   user: 'linkedus',
@@ -16,6 +15,50 @@ connection.connect(err => {
   if (err) throw err;
 });
 
+
+// axios.get('/home')
+// .then(function (response) {
+//   console.log(response);
+// })
+// .catch(function (error) {
+//   console.log(error);
+// });
+  app.use(bodyParser.urlencoded())
+  app.use(bodyParser.json())
+
+  app.post('/profile', function(req, res) {
+    //console.log('posted to /profile');
+    //console.log(req.body);
+    //console.log(req.method);
+    var addsql = 'INSERT IGNORE INTO user_info (name, photo, title, location, summary, saveActive) VALUES(?,?,?,?,?,0)';
+    var sqlparams = [req.body.Name, req.body.pictureURL, req.body.headline, req.body.location, req.body.summary];
+    connection.query(addsql,sqlparams,function(err,result){
+      if(err){
+        console.log('[INSERT ERROR] -', err.message);
+        return;
+      }
+      console.log('------INSERT--------');
+      console.log(result);
+      //console.log('--------------------\n\n');
+    });
+  });
+
+
+//var addsql = 'INSERT IGNORE INTO user_info (name, photo, title, location, summary, saveActive) VALUES(?,?,?,?,?,0)';
+//var sqlparams = [name, profile.pictureURL, profile.headline, profile.location, profile.summary];
+
+
+
+/*connection.query(addsql,sqlparams,function(err,result){
+  if(err){
+    console.log('[INSERT ERROR] -', err.message);
+    return;
+  }
+  console.log('------INSERT--------');
+  console.log('result');
+  console.log('--------------------\n\n');
+});
+*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
