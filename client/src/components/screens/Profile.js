@@ -17,7 +17,7 @@ class Profile extends React.Component {
           <Link to='/settings' style={{ color:'white' }}><span><SettingIcon /></span></Link>
         </div>
         <img className='profile_avatar'
-            src="https://media.licdn.com/dms/image/C4D03AQFEx0TW8NhsCw/profile-displayphoto-shrink_200_200/0?e=1550102400&v=beta&t=Ql_WOwO8V8ip6S1r0cs6yhHGDRNh9totiWbhygVXbBU"
+            src="https://lh3.googleusercontent.com/a-/AAuE7mA3YOPZdUSnSL067e5YdsvIqQaFESynutSDo6e2Lg=s192"
             alt="profile" />
         <div className='profile_details'>
           <span className='details_title'>Area of Interest</span>
