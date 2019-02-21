@@ -28,7 +28,7 @@ class MessagesScreen extends React.Component {
 				<ChatList className='chatlist'>
 				  <Link to='/chat' className='router_link'>
 				  	<ChatListItem className='chatlist_item'>
-					    <Avatar className='avatar' imgUrl='https://media.licdn.com/dms/image/C4E03AQFdhqSSucWLTg/profile-displayphoto-shrink_800_800/0?e=1550102400&v=beta&t=dsJgTRO-OBZ1GzdaZH7cv9XKqsczC0UJV5KK_PhXtFI' />
+					    <Avatar className='avatar' imgUrl='https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/37272473_2170910939809486_2811315378112692224_o.jpg?_nc_cat=109&_nc_ht=scontent-arn2-1.xx&oh=81311e014360781e3ecf2f35f988fa29&oe=5CF2DDB0' />
 					    <Column className='message_content'>
 					      <Row justify>
 					        <Title ellipsis>{'Weiqing'}</Title>
