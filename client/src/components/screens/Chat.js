@@ -25,7 +25,7 @@ class ChatScreen extends React.Component {
           <div className='messenger'>
             <MessageList active>
               <MessageGroup
-                avatar="https://media.licdn.com/dms/image/C4E03AQFdhqSSucWLTg/profile-displayphoto-shrink_800_800/0?e=1550102400&v=beta&t=dsJgTRO-OBZ1GzdaZH7cv9XKqsczC0UJV5KK_PhXtFI"
+                avatar="https://scontent-arn2-1.xx.fbcdn.net/v/t1.0-9/37272473_2170910939809486_2811315378112692224_o.jpg?_nc_cat=109&_nc_ht=scontent-arn2-1.xx&oh=81311e014360781e3ecf2f35f988fa29&oe=5CF2DDB0"
                 onlyFirstWithMeta
               >
                 <Message authorName="Weiqing Huang" date="21:37">
