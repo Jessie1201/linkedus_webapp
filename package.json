@@ -2,6 +2,8 @@
   "name": "example-create-react-app-express",
   "version": "1.0.0",
   "scripts": {
+    "build": "webpack --mode production",
+    "start": "npm run build && node server.js",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
