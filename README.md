@@ -1,18 +1,12 @@
 # LinkedUs
-http://linkedus.jessiezheng.world
+https://linked-us.herokuapp.com
 (Preferable open through mobile phone browser)  
 LinkedUs enables easier business networking by matching LinkedIn profile. It's a Mobile Dev course project at KTH.
 
-## How to run
-Before running, install npm packages respectively in root for server, and in /client for frontend.
+## How to run locally
+Before running, install npm packages when located at root directory.
 ```shell
 $ npm install
-$ cd client/
-$ npm install
-$ cd ..
-
 $ yarn dev
 ```
 Then it should be running at http://localhost:3000/
-
-The final version as deployed on AWS is a production compiled by `yarn build`
